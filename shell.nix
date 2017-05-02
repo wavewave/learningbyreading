@@ -25,7 +25,7 @@ let
 
 in stdenv.mkDerivation {
   name = "textview-dev";
-  buildInputs = [ swiProlog flex ]
+  buildInputs = [ swiProlog flex gsoap ]
                 ++ (with python27Packages; [
                      simplejson requests lxml nltk python-graph-core
                      rdflib
