@@ -20,6 +20,7 @@ log.basicConfig(level=log.INFO, format='%(asctime)s.%(msecs)03d %(levelname)s %(
 config = ConfigParser.ConfigParser()
 config.read(join(dirname(__file__),'../config/namespace.conf'))
 config.read(join(dirname(__file__),'../config/disambiguation.conf'))
+config.read(join(dirname(__file__),'../config/mapping.conf'))
 
 with open(join(dirname(__file__),'../resources/thematic_roles.txt')) as f:
     thematic_roles = [line.rstrip() for line in f]

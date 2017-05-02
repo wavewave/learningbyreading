@@ -21,7 +21,7 @@ def boxer(tokenized, fol=False, drg=False):
         return boxer_online(tokenized, fol, drg)
 
 def tokenize_local(text):
-    tokenizer = join(dirname(__file__),'../{0}/bin/t'.format(config.get('candc', 'base_dir')))
+    tokenizer = join(dirname(__file__),'../{0}/bin/tokeniser'.format(config.get('candc', 'base_dir')))
     process = subprocess.Popen([tokenizer, '--stdin'],
                            shell=False,
                            stdin=subprocess.PIPE,

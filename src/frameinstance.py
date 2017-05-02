@@ -23,7 +23,7 @@ elif config_mapping.get('net', 'module') == 'babelnet':
 
 def get_frame_instances(variables, semantics, thematic_roles):
     frame_instances = dict()
-    if config.get('semantics', 'module') == 'boxer':
+    if config_mapping.get('semantics', 'module') == 'boxer':
         for variable, senses in variables.iteritems():
             for sense in senses:
                 synset = sense.split('/')[-1]
@@ -84,7 +84,7 @@ def get_frame_triples(frame_instances):
                       '<{0}/frame-{1}>'.format(config.get('namespace', 'frame'), framebase_id))
             triples.append(triple)
             for role, (variable, filler) in frame_instance['roles'].iteritems():
-                filler = unicode(filler, "utf-8")
+                #filler = unicode(filler, "utf-8")
                 triple = ('<{0}/fi-{1}>'.format(config.get('namespace', 'frame'), frame_instance_id),
                           '<{0}/fe-{1}>'.format(config.get('namespace', 'frame'), role),
                           '<{0}>'.format(filler.encode('utf-8')))
