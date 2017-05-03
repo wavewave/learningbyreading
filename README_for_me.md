@@ -1,4 +1,5 @@
 ```
+$ nix-shell shell.nix
 $ cd ext
 $ ./install_candc.sh
 $ ./install_ukb.sh
